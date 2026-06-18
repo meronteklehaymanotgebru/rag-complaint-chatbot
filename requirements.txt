@@ -1,0 +1,10 @@
+pandas
+matplotlib
+seaborn
+scikit-learn
+langchain
+sentence-transformers
+chromadb
+transformers
+gradio
+torch
