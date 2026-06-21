@@ -22,10 +22,14 @@ print(f"Total complaints available: {len(df)}")
 # 2. Create a stratified sample (tiny – to respect hardware limits)
 # -------------------------------------------------------------------
 # Since only Credit card has data, we still do it for demonstration.
-sample_size = 500   # keep it very small
-df_sample = df.sample(n=500, random_state=42).reset_index(drop=True)
+ample_size = 10000
+if len(df) < sample_size:
+    df_sample = df.copy()
+else:
+    df_sample = df.sample(n=sample_size, random_state=42).reset_index(drop=True)
 
 print(f"Sample size: {len(df_sample)}")
+print(f"Product distribution:\n{df_sample['Product'].value_counts()}")
 print(df_sample['Product'].value_counts())
 
 # -------------------------------------------------------------------
